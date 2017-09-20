@@ -21,10 +21,11 @@ x and y are defined as having values from 1 to 8.
 
 4.	Based on the possible moves depicted by equation above and the constraint that 0<x<9 and 0<y<9 (for 8*8) chessboard, the following algorithm will be followed for searching paths.
 
-•	Define list with start position.
-•	Calculate next set of points based on above equations.
-•	Check if any of the positions match given destination coordinates. If yes then store as possible path. If No then add position coordinates to the original list.
-•	Pick the next position on list and continue with above 3 steps till 10 paths have been found.
+* Define list with start position.
+*	Calculate next set of points based on above equations.
+*	Check if any of the positions match given destination coordinates. If yes then store as possible path. If No then add position coordinates to the original list.
+* Additionally check in above step that path from next position does not loop back to the previous position (reject such paths).
+*	Pick the next position on list and continue with above 3 steps till 10 paths have been found.
 
 The Algorithm is implemented in R for simplicity; the logic is defined with following variables and functions:
 XStart,YStart : the start position coordinates.
